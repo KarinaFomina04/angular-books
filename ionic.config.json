@@ -1,0 +1,12 @@
+{
+  "defaultProject": "angular-books",
+  "projects": {
+    "angular-books": {
+      "name": "angular-books",
+      "integrations": {
+        "capacitor": {}
+      },
+      "type": "angular"
+    }
+  }
+}
