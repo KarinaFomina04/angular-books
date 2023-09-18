@@ -14,6 +14,11 @@ export class ProductPageComponent {
   loading = false;
   //products$: Observable<Array<IProduct>>;
   term = '';
+  // authors: string[];
+  // languages: string[];
+  // minPages: number;
+  // maxPages: number;
+  // genre: string;
 
   constructor(
     public productsService: ProductsService,

@@ -12,3 +12,4 @@ export class FilterProductsPipe implements PipeTransform {
   }
 
 }
+

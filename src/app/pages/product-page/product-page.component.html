@@ -12,6 +12,7 @@
 
 <p *ngIf="loading" class="text-center text-lg">Loading....</p>
 <div *ngIf="productsService.products">
+<!--  *ngFor="let product of productsService.products | filterProducts: term; let i = index"-->
   <app-product
     *ngFor="let product of productsService.products | filterProducts: term; let i = index"
     [product]="product"
