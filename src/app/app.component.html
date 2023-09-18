@@ -1,20 +1,8 @@
-<!--suppress ALL-->
+<ion-content>
 <app-global-error></app-global-error>
-<div class="max-w-2xl container mx-auto pt-5">
-  <h1 class="font-bold mb-2 text-center text-lg">{{ title | titlecase }}</h1>
+<app-navigaton></app-navigaton>
+<div class="max-w-2xl container mx-auto pt-5 mt-[50px]">
 
-<!--  <input-->
-<!--    type="text"-->
-<!--    class="mb-2 border py-2 px-4 w-full"-->
-<!--    placeholder="Filter products..."-->
-<!--    [(ngModel)]="term"-->
-<!--  />-->
-
-<!--  <app-product [product]="products[0]"></app-product>-->
-<!--  <app-product [product]="products[1]"></app-product>-->
-
-  <p *ngIf="loading" class="text-center text-lg">Loading....</p>
-
-  <app-product *ngFor="let product of products$ | async; let i = index" [product]="product"></app-product>
-
+  <router-outlet></router-outlet>
 </div>
+</ion-content>
