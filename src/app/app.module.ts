@@ -17,7 +17,7 @@ import { ProductPageComponent } from './pages/product-page/product-page.componen
 import { AboutPageComponent } from './pages/about-page/about-page.component';
 import { NavigatonComponent } from './components/navigaton/navigaton.component';
 import { BookDetailComponent } from './pages/book-detail/book-detail.component';
-
+import { NgMultiSelectDropDownModule } from 'ng-multiselect-dropdown';
 @NgModule({
   declarations: [
     AppComponent,
@@ -39,7 +39,8 @@ import { BookDetailComponent } from './pages/book-detail/book-detail.component';
     HttpClientModule,
     IonicModule.forRoot(),
     ReactiveFormsModule,
-    FormsModule
+    FormsModule,
+    NgMultiSelectDropDownModule.forRoot()
   ],
   providers: [],
   bootstrap: [AppComponent]
