@@ -56,8 +56,12 @@
 >
 </ng-multiselect-dropdown>
 
+<button
+  class="rounded-full bg-red-700 text-white right-5 bottom-5 py-2 px-4 text-center w-full"
+  (click)="modalService.open()"
+>Добавить книгу</button>
 
-<p *ngIf="loading" class="text-center text-lg">Loading....</p>
+<!--<p *ngIf="loading" class="text-center text-lg">Loading....</p>-->
 <div *ngIf="productsService.products">
 <!--  *ngFor="let product of productsService.products | filterProducts: term; let i = index"-->
   <app-product
@@ -69,8 +73,3 @@
 <app-modal *ngIf="modalService.isVisible$ | async" title="Create new Book">
   <app-create-product></app-create-product>
 </app-modal>
-
-<button
-  class="rounded-full bg-red-700 text-white fixed right-5 bottom-5 py-2 px-4"
-  (click)="modalService.open()"
->Добавить книгу</button>

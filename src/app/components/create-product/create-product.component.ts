@@ -43,6 +43,8 @@ import { ProductsService } from '../../services/products.service';
 import { IProduct } from '../../models/product';
 import {ModalService} from "../../services/modal.service";
 import {products} from "src/app/data/products";
+import {authors} from "../../data/authors";
+import {languages} from "../../data/languages";
 @Component({
   selector: 'app-create-product',
   templateUrl: './create-product.component.html',
@@ -71,8 +73,8 @@ export class CreateProductComponent implements OnInit {
   ) {}
 
   ngOnInit(): void {
-    this.authors = this.productService.getAuthors();
-    this.languages = this.productService.getLanguages();
+    this.authors = authors?.map(author=>author.name)
+    this.languages = languages?.map(language => language.name);
   }
 
   onSubmit() {

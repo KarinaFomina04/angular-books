@@ -1,5 +1,13 @@
-<div  class="py-4 px-6 border rounded flex items-center flex-col mb-2 cursor-pointer">
-  <p><span class="font-medium">{{ author.name }}</span></p>
+<div class="flex">
+  <div *ngIf="!editMode" class="grow-[3] py-4 px-6 border rounded flex items-center flex-col mb-2 cursor-pointer">
+    <p><span class="font-medium">{{ author.name }}</span></p>
+  </div>
+  <input *ngIf="editMode"
+    type="text"
+    class="mb-2 border py-2 px-4 w-full"
+    [(ngModel)]="currentAuthor"
+  />
+  <button *ngIf="!editMode" (click)="edit()" class="border right-5 bottom-5 py-2 px-4">Edit ✏️</button>
+  <button *ngIf="editMode" (click)="save()" class="border right-5 bottom-5 py-2 px-4">Save ✅</button>
 </div>
-
 

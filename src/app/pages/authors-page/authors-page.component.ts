@@ -9,4 +9,13 @@ import { authors } from 'src/app/data/authors';
 export class AuthorsPageComponent {
   authors = authors
   title = 'авторы';
+  currentAuthor: string;
+
+  addAuthor() {
+    authors.unshift({name: this.currentAuthor})
+  }
+
+  editAuthor() {
+
+  }
 }

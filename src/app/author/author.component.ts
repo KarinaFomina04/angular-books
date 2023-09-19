@@ -8,4 +8,16 @@ import {IAuthor} from "../models/author";
 })
 export class AuthorComponent {
   @Input() author: IAuthor;
+  editMode: boolean = false
+  currentAuthor : string
+
+
+  edit() {
+    this.editMode = true
+    this.currentAuthor = this.author.name
+  }
+  save() {
+    this.editMode = false
+    this.author.name = this.currentAuthor
+  }
 }

@@ -17,7 +17,7 @@ export class ProductPageComponent {
   description = '';
   minPages: number;
   maxPages: number;
-  genre: string;
+  genre: string = '';
   dropdownAuthorList: any = [];
   dropdownLanguageList: any = [];
   selectedAuthors: any = [];
