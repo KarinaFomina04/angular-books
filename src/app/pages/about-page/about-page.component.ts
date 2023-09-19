@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import {IAuthor} from "../../models/author";
 
 @Component({
   selector: 'app-about-page',

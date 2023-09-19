@@ -18,6 +18,8 @@ import { AboutPageComponent } from './pages/about-page/about-page.component';
 import { NavigatonComponent } from './components/navigaton/navigaton.component';
 import {BookDetailComponent} from "src/app/pages/book-detail/book-detail.component";
 import { NgMultiSelectDropDownModule } from 'ng-multiselect-dropdown';
+import { AuthorsPageComponent } from './pages/authors-page/authors-page.component';
+import { AuthorComponent } from './author/author.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -31,6 +33,8 @@ import { NgMultiSelectDropDownModule } from 'ng-multiselect-dropdown';
     AboutPageComponent,
     NavigatonComponent,
     BookDetailComponent,
+    AuthorsPageComponent,
+    AuthorComponent,
   ],
   imports: [
     BrowserModule,

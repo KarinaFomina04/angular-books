@@ -5,17 +5,6 @@
   <p>Жанр: <span class="font-medium">{{ product.genre }}</span></p>
   <p>Страницы: <span class="font-medium">{{ product.pages }}</span></p>
   <p>Язык: <span class="font-medium">{{ product.language }}</span></p>
-  <!--  <button-->
-  <!--    class="border py-2 px-4 rounded bg-yellow-400"-->
-  <!--    [ngClass]="{-->
-  <!--    'bg-yellow-400': !details,-->
-  <!--    'bg-blue-400': details-->
-  <!--    }"-->
-  <!--    (click)="details = !details"-->
-  <!--  >-->
-  <!--    {{ details ? 'Hide' : 'Show'}} Details-->
-  <!--  </button>-->
-
   <div *ngIf="details">
     <p>{{ product.description }}</p>
   </div>
