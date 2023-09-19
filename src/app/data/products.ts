@@ -1,41 +1,9 @@
-// import { IProduct } from '../models/product';
-//
-// export const products: Array<IProduct> = [
-//   {
-//     id: 1,
-//     title: "Fjallraven - Foldsack No. 1 Backpack, Fits 15 Laptops",
-//     price: 109.95,
-//     description: "Your perfect pack for everyday use and walks in the forest. Stash your laptop (up to 15 inches) in the padded sleeve, your everyday",
-//     category: "men's clothing",
-//     image: "https://fakestoreapi.com/img/81fPKd-2AYL._AC_SL1500_.jpg",
-//     rating: {
-//       rate: 3.9,
-//       count: 120,
-//     }
-//   },
-//   {
-//     id: 2,
-//     title: "Mens Casual Premium Slim Fit T-Shirts",
-//     price: 22.3,
-//     description: "Slim-fitting style, contrast raglan long sleeve, three-button henley placket, light weight & soft fabric for breathable and comfortable wearing. And Solid stitched shirts with round neck made for durability and a great fit for casual fashion wear and diehard baseball fans. The Henley style round neckline includes a three-button placket.",
-//     category: "men's clothing",
-//     image: "https://fakestoreapi.com/img/71-3HjGNDUL._AC_SY879._SX._UX._SY._UY_.jpg",
-//     rating: {
-//       rate: 4.1,
-//       count: 259
-//     }
-//   }
-// ]
-
-
-import {IProduct} from '../models/product';
+import {IProduct} from "src/app/models/product";
 
 export const products: Array<IProduct> = [
   {
     id: 1,
-    title: "\n" +
-      "БЕСПЛАТНО\n" +
-      "КРЫСА МУТАНТ СЕКСИСТ (ФИНАЛ СЕЗОНА)",
+    title: "КРЫСА МУТАНТ СЕКСИСТ (ФИНАЛ СЕЗОНА)",
     price: 1095,
     description: "Дисклеймер: от прослушивания данного аудио-подкаста появится желание запастись тушенкой и спрятаться под одеяло.\n" +
       "\n" +
@@ -97,20 +65,19 @@ export const products: Array<IProduct> = [
       rate: 4.6,
       count: 264
     }
-},
-{
-  id: 6,
+  },
+  {
+    id: 6,
     title: "Следствие ведут Колобки (сборник)",
-  price: 456,
-  description: "В одном парке культуры и отдыха стоит небольшой домик. В нём работают Колобки – детективы самого высокого уровня с безупречной репутацией. Они находят пропавших детей, произведения искусства, предотвращают экологические катастрофы и разоблачают коварных преступников. Эти суровые спецы прочно заняли своё место среди знаменитых сыщиков – Шерлока Холмса, Ниро Вульфа и Эраста Фандорина. Разница только в том, что Колобки Э. Успенского – самые детские детективы во всём мире. Книга «Следствие ведут Колобки» впервые выходит с новыми иллюстрациями Н. Бугославской.\n" +
-"\n" +
-"Для младшего школьного возраста.",
-  category: "men's clothing",
-  image: "https://cv0.litres.ru/pub/c/cover_415/419502.webp",
-  rating: {
-  rate: 5.0,
-    count: 260
-}
-},
-
+    price: 456,
+    description: "В одном парке культуры и отдыха стоит небольшой домик. В нём работают Колобки – детективы самого высокого уровня с безупречной репутацией. Они находят пропавших детей, произведения искусства, предотвращают экологические катастрофы и разоблачают коварных преступников. Эти суровые спецы прочно заняли своё место среди знаменитых сыщиков – Шерлока Холмса, Ниро Вульфа и Эраста Фандорина. Разница только в том, что Колобки Э. Успенского – самые детские детективы во всём мире. Книга «Следствие ведут Колобки» впервые выходит с новыми иллюстрациями Н. Бугославской.\n" +
+      "\n" +
+      "Для младшего школьного возраста.",
+    category: "men's clothing",
+    image: "https://cv0.litres.ru/pub/c/cover_415/419502.webp",
+    rating: {
+      rate: 5.0,
+      count: 260
+    }
+  },
 ]

@@ -14,6 +14,7 @@ export class ProductPageComponent {
   loading = false;
   //products$: Observable<Array<IProduct>>;
   term = '';
+  description = '';
   // authors: string[];
   // languages: string[];
   // minPages: number;

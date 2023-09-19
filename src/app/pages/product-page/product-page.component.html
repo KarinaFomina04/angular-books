@@ -7,6 +7,13 @@
   [(ngModel)]="term"
 />
 
+<input
+  type="text"
+  class="mb-2 border py-2 px-4 w-full"
+  placeholder="Filter products by description"
+  [(ngModel)]="description"
+/>
+
 <!--  <app-product [product]="products[0]"></app-product>-->
 <!--  <app-product [product]="products[1]"></app-product>-->
 
@@ -14,7 +21,7 @@
 <div *ngIf="productsService.products">
 <!--  *ngFor="let product of productsService.products | filterProducts: term; let i = index"-->
   <app-product
-    *ngFor="let product of productsService.products | filterProducts: term; let i = index"
+    *ngFor="let product of productsService.products | filterProducts: term : description; let i = index"
     [product]="product"
   ></app-product>
 </div>
