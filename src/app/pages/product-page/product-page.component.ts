@@ -11,7 +11,7 @@ import {languages} from "src/app/data/languages";
   styleUrls: ['./product-page.component.scss']
 })
 export class ProductPageComponent {
-  title = 'angular app';
+  title = 'Список книг';
   loading = false;
   term = '';
   description = '';

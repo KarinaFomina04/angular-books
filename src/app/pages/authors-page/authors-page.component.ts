@@ -8,5 +8,5 @@ import { authors } from 'src/app/data/authors';
 })
 export class AuthorsPageComponent {
   authors = authors
-
+  title = 'авторы';
 }
