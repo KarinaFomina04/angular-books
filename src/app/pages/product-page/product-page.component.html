@@ -14,9 +14,6 @@
   [(ngModel)]="description"
 />
 
-<!--  <app-product [product]="products[0]"></app-product>-->
-<!--  <app-product [product]="products[1]"></app-product>-->
-
 <p *ngIf="loading" class="text-center text-lg">Loading....</p>
 <div *ngIf="productsService.products">
 <!--  *ngFor="let product of productsService.products | filterProducts: term; let i = index"-->
@@ -25,7 +22,6 @@
     [product]="product"
   ></app-product>
 </div>
-<!--mycode-->
 <app-modal *ngIf="modalService.isVisible$ | async" title="Create new Product">
   <app-create-product></app-create-product>
 </app-modal>

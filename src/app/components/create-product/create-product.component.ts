@@ -1,43 +1,40 @@
-import { Component } from '@angular/core';
-import {FormControl, FormGroup, Validators} from "@angular/forms";
+import {Component} from '@angular/core';
 import {ProductsService} from "../../services/products.service";
 import {ModalService} from "../../services/modal.service";
+import {products} from "src/app/data/products";
+import {IProduct} from "src/app/models/product";
 
 @Component({
   selector: 'app-create-product',
   templateUrl: './create-product.component.html',
   styleUrls: ['./create-product.component.scss']
 })
+
 export class CreateProductComponent {
+  newBook: IProduct = {
+    id: 0,
+    title: '',
+    author: '',
+    description: '',
+    genre: '',
+    image: 'https://i.pravatar.cc',
+    language: '',
+    pages: 0,
+  };
+  constructor(private productService: ProductsService, private modalService: ModalService) {}
 
-  constructor(private productService: ProductsService,
-              private modalService: ModalService) {
-  }
-
-  form = new FormGroup({
-    title: new FormControl<string>('', [
-      Validators.required,
-      Validators.minLength(6)
-    ])
-  })
-
-  get title() {
-    return this.form.controls.title as FormControl
-  }
-
-  ngOnInit(): void {}
-  submit() {
-    console.log(this.form.value)
-    this.productService.create({
-      title: this.form.value as string,
-      author: 'Neil Gaiman',
-      description: 'lorem ipsum set',
-      genre: 'detective',
-      language: 'english',
-      pages: 325,
+  onSubmit() {
+    products.unshift(this.newBook);
+    this.newBook = {
+      id: 0,
+      title: '',
+      author: '',
+      description: '',
+      genre: '',
       image: 'https://i.pravatar.cc',
-    }).subscribe(()=>{
-      this.modalService.close()
-    })
+      language: '',
+      pages: 0,
+    };
+    this.modalService.close()
   }
 }

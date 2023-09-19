@@ -17,6 +17,7 @@ import { ProductPageComponent } from './pages/product-page/product-page.componen
 import { AboutPageComponent } from './pages/about-page/about-page.component';
 import { NavigatonComponent } from './components/navigaton/navigaton.component';
 import { BookDetailComponent } from './pages/book-detail/book-detail.component';
+import { MultiSelectComponent } from './multi-select/multi-select.component';
 
 @NgModule({
   declarations: [
@@ -30,7 +31,8 @@ import { BookDetailComponent } from './pages/book-detail/book-detail.component';
     ProductPageComponent,
     AboutPageComponent,
     NavigatonComponent,
-    BookDetailComponent
+    BookDetailComponent,
+    MultiSelectComponent
   ],
   imports: [
     BrowserModule,

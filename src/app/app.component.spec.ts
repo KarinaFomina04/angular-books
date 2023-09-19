@@ -1,29 +1,41 @@
-import { TestBed } from '@angular/core/testing';
-import { RouterTestingModule } from '@angular/router/testing';
-import { AppComponent } from './app.component';
+import { ComponentFixture, TestBed } from '@angular/core/testing';
+import {ProductComponent} from "src/app/components/product/product.component";
 
-describe('AppComponent', () => {
-  beforeEach(() => TestBed.configureTestingModule({
-    imports: [RouterTestingModule],
-    declarations: [AppComponent]
-  }));
+describe('ProductComponent', () => {
+  let component: ProductComponent;
+  let fixture: ComponentFixture<ProductComponent>;
 
-  it('should create the app', () => {
-    const fixture = TestBed.createComponent(AppComponent);
-    const app = fixture.componentInstance;
-    expect(app).toBeTruthy();
+  beforeEach(() => {
+    TestBed.configureTestingModule({
+      declarations: [ProductComponent],
+    });
+
+    fixture = TestBed.createComponent(ProductComponent);
+    component = fixture.componentInstance;
   });
 
-  it(`should have as title 'angular-books'`, () => {
-    const fixture = TestBed.createComponent(AppComponent);
-    const app = fixture.componentInstance;
-    expect(app.title).toEqual('angular-books');
+  it('should create', () => {
+    expect(component).toBeTruthy();
   });
 
-  it('should render title', () => {
-    const fixture = TestBed.createComponent(AppComponent);
+
+  it('should hide product details when "details" is false', () => {
+    component.product = {
+      title: 'Sample Title',
+      author: 'Sample Author',
+      genre: 'Sample Genre',
+      pages: 200,
+      language: 'Sample Language',
+      description: 'Sample Description',
+      image: 'sample.jpg',
+    };
+    component.details = false;
     fixture.detectChanges();
-    const compiled = fixture.nativeElement as HTMLElement;
-    expect(compiled.querySelector('.content span')?.textContent).toContain('angular-books app is running!');
+
+    const compiled = fixture.nativeElement;
+    const detailsElement = compiled.querySelector('.product-details');
+
+    expect(detailsElement).toBeNull();
   });
+
 });

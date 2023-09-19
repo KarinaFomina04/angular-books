@@ -1,7 +1,6 @@
 import {Component, Input} from '@angular/core';
 import { IProduct } from '../../models/product';
 import { ActivatedRoute } from '@angular/router';
-import {products} from "../../data/products";
 import {ProductsService} from "../../services/products.service";
 
 

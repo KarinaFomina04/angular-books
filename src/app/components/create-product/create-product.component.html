@@ -1,19 +1,24 @@
-<form [formGroup]="form"  (ngSubmit)="submit()" >
-  <input
-    type="text"
-    class="border w-full py-2 px-4 mb-2"
-    placeholder="Product name"
-    formControlName="title"
-    appFocus
-  >
+<form (ngSubmit)="onSubmit()" >
+  <div class="container">
+  <label class="label" for="title">Название:</label>
+  <input class="inputForm" type="text" id="title" [(ngModel)]="newBook.title" name="title" required>
 
-  <p
-    class="text-red-600 font-medium mb-2"
-    *ngIf="title.errors?.minlength && title.touched"
-  >Please fill title field width min length. Now {{ title.value.length }}</p>
+  <label for="author">Автор:</label>
+  <input class="inputForm" type="text" id="author" [(ngModel)]="newBook.author" name="author" required>
 
-  <button
-    type="submit"
-    class="py-2 px-4 bg-blue-600 text-white"
-  >Create</button>
+  <label for="description">Описание:</label>
+  <input class="inputForm" type="text" id="description" [(ngModel)]="newBook.description" name="description" required>
+
+  <label for="pages"> Число страниц:</label>
+  <input class="inputForm" type="number" id="pages" [(ngModel)]="newBook.pages" name="pages" required>
+
+  <label for="language"> Язык:</label>
+  <input class="inputForm" type="text" id="language" [(ngModel)]="newBook.language" name="language" required>
+
+  <label for="genre">Жанр:</label>
+  <input class="inputForm" type="text" id="genre" [(ngModel)]="newBook.genre" name="genre" required>
+
+
+  <button class="button" type="submit">Создать книгу</button>
+  </div>
 </form>
