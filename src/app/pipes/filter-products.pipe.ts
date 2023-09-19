@@ -1,13 +1,14 @@
 import {Pipe, PipeTransform} from '@angular/core';
 import {IProduct} from "../models/product";
 import {IAuthor} from "../models/ author";
+import {ILanguage} from "../models/language";
 
 @Pipe({
   name: 'filterProducts'
 })
 export class FilterProductsPipe implements PipeTransform {
 
-  transform(products: IProduct[], search: string, descriptionSearch: string, minPages: number, maxPages: number, genre: string, authors: IAuthor[]): IProduct[] {
+  transform(products: IProduct[], search: string, descriptionSearch: string, minPages: number, maxPages: number, genre: string, authors: IAuthor[], languages: ILanguage[]): IProduct[] {
     console.log('search', search, 'descri', descriptionSearch)
     let result = products;
     const checkSubset = (parentArray: any[], subsetArray: any[]) => {
@@ -32,6 +33,9 @@ export class FilterProductsPipe implements PipeTransform {
     }
     if (authors && Array.isArray(authors)) {
       result = result.filter(p => checkSubset(p.author.split(', '), authors.map(a=> a.name)));
+    }
+    if (languages && Array.isArray(languages)) {
+      result = result.filter(p => checkSubset(p.language.split(', '), languages.map(a=> a.name)));
     }
     return result;
   }

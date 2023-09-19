@@ -4,6 +4,7 @@ import {ModalService} from "../../services/modal.service";
 import {authors} from "../../data/ authors";
 import { IDropdownSettings } from 'ng-multiselect-dropdown';
 import {IAuthor} from "../../models/ author";
+import {languages} from "../../data/languages";
 
 
 @Component({
@@ -23,6 +24,7 @@ export class ProductPageComponent {
 
   dropdownList: any = [];
   selectedAuthors: any = [];
+  selectedLanguages: any = [];
   dropdownSettings: IDropdownSettings = {};
   constructor(
     public productsService: ProductsService,
@@ -44,6 +46,16 @@ export class ProductPageComponent {
       itemsShowLimit: 3,
       allowSearchFilter: true
     };
+    this.dropdownList = languages;
+    this.dropdownSettings = {
+      singleSelection: false,
+      idField: 'name',
+      textField: 'name',
+      selectAllText: 'Select All',
+      unSelectAllText: 'UnSelect All',
+      itemsShowLimit: 3,
+      allowSearchFilter: true
+    };
   }
 
   onItemSelect(item: any) {
@@ -53,4 +65,5 @@ export class ProductPageComponent {
   onSelectAll(items: any) {
     console.log(items);
   }
+
 }

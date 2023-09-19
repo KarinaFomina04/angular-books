@@ -35,6 +35,7 @@
   <option value="Children's">Children's</option>
   <option value="Biographies">Biographies</option>
 </select>
+
 <ng-multiselect-dropdown
   [placeholder]="'Выбрать автора'"
   [settings]="dropdownSettings"
@@ -44,11 +45,22 @@
   (onSelectAll)="onSelectAll($event)"
 >
 </ng-multiselect-dropdown>
+
+<ng-multiselect-dropdown
+  [placeholder]="'Выбрать язык'"
+  [settings]="dropdownSettings"
+  [data]="dropdownList"
+  [(ngModel)]="selectedLanguages"
+  (onSelect)="onItemSelect($event)"
+  (onSelectAll)="onSelectAll($event)"
+>
+</ng-multiselect-dropdown>
+
 <p *ngIf="loading" class="text-center text-lg">Loading....</p>
 <div *ngIf="productsService.products">
   <!--  *ngFor="let product of productsService.products | filterProducts: term; let i = index"-->
   <app-product
-    *ngFor="let product of productsService.products | filterProducts: term : description : minPages : maxPages : genre : selectedAuthors; let i = index"
+    *ngFor="let product of productsService.products | filterProducts: term : description : minPages : maxPages : genre : selectedAuthors : selectedLanguages; let i = index"
     [product]="product"
   ></app-product>
 </div>
