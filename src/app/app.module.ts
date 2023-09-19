@@ -16,6 +16,7 @@ import { FocusDirective } from './directives/focus.directive';
 import { ProductPageComponent } from './pages/product-page/product-page.component';
 import { AboutPageComponent } from './pages/about-page/about-page.component';
 import { NavigatonComponent } from './components/navigaton/navigaton.component';
+import { BookDetailComponent } from './pages/book-detail/book-detail.component';
 
 @NgModule({
   declarations: [
@@ -28,7 +29,8 @@ import { NavigatonComponent } from './components/navigaton/navigaton.component';
     FocusDirective,
     ProductPageComponent,
     AboutPageComponent,
-    NavigatonComponent
+    NavigatonComponent,
+    BookDetailComponent
   ],
   imports: [
     BrowserModule,
