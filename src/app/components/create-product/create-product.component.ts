@@ -30,14 +30,12 @@ export class CreateProductComponent {
     console.log(this.form.value)
     this.productService.create({
       title: this.form.value as string,
-      price: 13.5,
+      author: 'Neil Gaiman',
       description: 'lorem ipsum set',
+      genre: 'detective',
+      language: 'english',
+      pages: 325,
       image: 'https://i.pravatar.cc',
-      category: 'electronic',
-      rating: {
-        rate: 42,
-        count: 1
-      }
     }).subscribe(()=>{
       this.modalService.close()
     })
