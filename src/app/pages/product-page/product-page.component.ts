@@ -1,18 +1,16 @@
-import {Component} from '@angular/core';
+import { Component } from '@angular/core';
 import {ProductsService} from "../../services/products.service";
 import {ModalService} from "../../services/modal.service";
-import {authors} from "../../data/ authors";
-import { IDropdownSettings } from 'ng-multiselect-dropdown';
-import {IAuthor} from "../../models/ author";
-import {languages} from "../../data/languages";
-
+import { FormsModule } from '@angular/forms';
+import {IDropdownSettings} from "ng-multiselect-dropdown";
+import {authors} from "src/app/data/authors";
+import {languages} from "src/app/data/languages";
 
 @Component({
   selector: 'app-product-page',
   templateUrl: './product-page.component.html',
   styleUrls: ['./product-page.component.scss']
 })
-
 export class ProductPageComponent {
   title = 'angular app';
   loading = false;
@@ -21,22 +19,24 @@ export class ProductPageComponent {
   minPages: number;
   maxPages: number;
   genre: string;
-
-  dropdownList: any = [];
+  dropdownAuthorList: any = [];
+  dropdownLanguageList: any = [];
   selectedAuthors: any = [];
   selectedLanguages: any = [];
   dropdownSettings: IDropdownSettings = {};
+
   constructor(
     public productsService: ProductsService,
     public modalService: ModalService
   ) {
   }
+
   ngOnInit(): void {
     this.loading = true;
     this.productsService.getAll().subscribe(() => {
       this.loading = false
     })
-    this.dropdownList = authors;
+    this.dropdownAuthorList = authors;
     this.dropdownSettings = {
       singleSelection: false,
       idField: 'name',
@@ -46,24 +46,14 @@ export class ProductPageComponent {
       itemsShowLimit: 3,
       allowSearchFilter: true
     };
-    this.dropdownList = languages;
-    this.dropdownSettings = {
-      singleSelection: false,
-      idField: 'name',
-      textField: 'name',
-      selectAllText: 'Select All',
-      unSelectAllText: 'UnSelect All',
-      itemsShowLimit: 3,
-      allowSearchFilter: true
-    };
+    this.dropdownLanguageList = languages;
+
   }
 
   onItemSelect(item: any) {
-    console.log(item);
   }
 
   onSelectAll(items: any) {
-    console.log(items);
   }
 
 }

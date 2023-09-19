@@ -1,5 +1,4 @@
-import {IAuthor} from '../models/ author';
-
+import {IAuthor} from '../models/author';
 
 export const authors: Array<IAuthor> = [
   {name: "Елизавета Стоянова "},

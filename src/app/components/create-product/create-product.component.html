@@ -3,17 +3,23 @@
   <label class="label" for="title">Название:</label>
   <input class="inputForm" type="text" id="title" [(ngModel)]="newBook.title" name="title" required>
 
-  <label for="author">Автор:</label>
-  <input class="inputForm" type="text" id="author" [(ngModel)]="newBook.author" name="author" required>
 
-  <label for="description">Описание:</label>
+    <label for="author">Автор:</label>
+    <select class="author" id="author" [(ngModel)]="selectedAuthor" name="author" required>
+      <option *ngFor="let author of authors" [value]="author">{{ author }}</option>
+    </select>
+
+    <label for="description">Описание:</label>
   <input class="inputForm" type="text" id="description" [(ngModel)]="newBook.description" name="description" required>
 
   <label for="pages"> Число страниц:</label>
   <input class="inputForm" type="number" id="pages" [(ngModel)]="newBook.pages" name="pages" required>
 
-  <label for="language"> Язык:</label>
-  <input class="inputForm" type="text" id="language" [(ngModel)]="newBook.language" name="language" required>
+
+    <label  for="language"> Язык:</label>
+    <select class="selectForLanguage"  id="language" [(ngModel)]="selectedLanguage" name="language" required>
+      <option *ngFor="let language of languages" [value]="language">{{ language }}</option>
+    </select>
 
   <label for="genre">Жанр:</label>
   <input class="inputForm" type="text" id="genre" [(ngModel)]="newBook.genre" name="genre" required>

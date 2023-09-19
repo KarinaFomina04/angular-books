@@ -27,7 +27,6 @@
   placeholder="Maximum Pages"
   [(ngModel)]="maxPages"
 />
-
 <select class="mb-2 border py-2 px-4 w-full" [(ngModel)]="genre">
   <option value="">All Genres</option>
   <option value="Fantastic">Fantastic</option>
@@ -46,6 +45,7 @@
 >
 </ng-multiselect-dropdown>
 
+
 <ng-multiselect-dropdown
   [placeholder]="'Выбрать язык'"
   [settings]="dropdownSettings"
@@ -56,9 +56,10 @@
 >
 </ng-multiselect-dropdown>
 
+
 <p *ngIf="loading" class="text-center text-lg">Loading....</p>
 <div *ngIf="productsService.products">
-  <!--  *ngFor="let product of productsService.products | filterProducts: term; let i = index"-->
+<!--  *ngFor="let product of productsService.products | filterProducts: term; let i = index"-->
   <app-product
     *ngFor="let product of productsService.products | filterProducts: term : description : minPages : maxPages : genre : selectedAuthors : selectedLanguages; let i = index"
     [product]="product"
