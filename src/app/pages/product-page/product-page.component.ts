@@ -1,12 +1,15 @@
-import { Component } from '@angular/core';
+import {Component, NgModule} from '@angular/core';
 import {ProductsService} from "../../services/products.service";
 import {ModalService} from "../../services/modal.service";
+import {authors} from "../../data/ authors";
+
 
 @Component({
   selector: 'app-product-page',
   templateUrl: './product-page.component.html',
   styleUrls: ['./product-page.component.scss']
 })
+
 export class ProductPageComponent {
   title = 'angular app';
 
@@ -15,11 +18,11 @@ export class ProductPageComponent {
   //products$: Observable<Array<IProduct>>;
   term = '';
   description = '';
-  // authors: string[];
+  authors: string[];
   // languages: string[];
-  // minPages: number;
-  // maxPages: number;
-  // genre: string;
+  minPages: number;
+  maxPages: number;
+  genre: string;
 
   constructor(
     public productsService: ProductsService,
