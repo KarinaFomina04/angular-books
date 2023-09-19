@@ -38,7 +38,7 @@
 <ng-multiselect-dropdown
   [placeholder]="'Выбрать автора'"
   [settings]="dropdownSettings"
-  [data]="dropdownList"
+  [data]="dropdownAuthorList"
   [(ngModel)]="selectedAuthors"
   (onSelect)="onItemSelect($event)"
   (onSelectAll)="onSelectAll($event)"
@@ -49,7 +49,7 @@
 <ng-multiselect-dropdown
   [placeholder]="'Выбрать язык'"
   [settings]="dropdownSettings"
-  [data]="dropdownList"
+  [data]="dropdownLanguageList"
   [(ngModel)]="selectedLanguages"
   (onSelect)="onItemSelect($event)"
   (onSelectAll)="onSelectAll($event)"

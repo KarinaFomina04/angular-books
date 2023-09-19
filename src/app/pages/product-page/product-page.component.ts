@@ -1,7 +1,6 @@
 import { Component } from '@angular/core';
 import {ProductsService} from "../../services/products.service";
 import {ModalService} from "../../services/modal.service";
-import { FormsModule } from '@angular/forms';
 import {IDropdownSettings} from "ng-multiselect-dropdown";
 import {authors} from "src/app/data/authors";
 import {languages} from "src/app/data/languages";
