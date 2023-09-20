@@ -3,7 +3,6 @@ import {IProduct} from "../models/product";
 import {IAuthor} from "src/app/models/author";
 import {ILanguage} from "src/app/models/language";
 
-
 @Pipe({
   name: 'filterProducts'
 })

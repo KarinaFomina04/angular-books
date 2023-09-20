@@ -40,8 +40,8 @@ export class ProductPageComponent {
       singleSelection: false,
       idField: 'name',
       textField: 'name',
-      selectAllText: 'Select All',
-      unSelectAllText: 'UnSelect All',
+      selectAllText: 'Выбрать все',
+      unSelectAllText: 'Снять все',
       itemsShowLimit: 3,
       allowSearchFilter: true
     };
